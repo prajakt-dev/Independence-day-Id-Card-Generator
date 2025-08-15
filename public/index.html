@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Independence Day Card Generator</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Independence Day Card Generator</h1>
+
+        <div class="flag-banner">
+            <div class="saffron"></div>
+            <div class="white">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Ashoka_Chakra.svg" alt="Ashoka Chakra" class="chakra">
+            </div>
+            <div class="green"></div>
+        </div>
+
+        <div class="generator-container">
+            <div class="form-group">
+                <label for="userName">Your Name:</label>
+                <input type="text" id="userName" placeholder="Enter your name" />
+            </div>
+
+            <label>Upload Your Photo (Square):</label>
+            <div id="photoContainer">
+                <div class="upload-text">
+                    Click to Upload Photo<br/>
+                    (Square Recommended)
+                </div>
+            </div>
+            <input type="file" id="photoUpload" accept="image/*" style="display: none;" />
+
+            <div id="livePreview" style="display:none; text-align:center; margin-top: 10px;">
+                <p style="margin-bottom:10px; font-weight:600;">Live Preview</p>
+                <img id="liveImage" src="" style="width:100px; height:100px; border-radius:50%; object-fit:cover; border: 2px solid #ccc;" />
+            </div>
+
+            <button id="generateBtn">Generate Card</button>
+        </div>
+
+        <div id="preview-container">
+            <div class="card" id="card">
+                <div class="card-content">
+                    <h2 class="card-title">Happy Independence Day!</h2>
+                    <img id="generatedPhoto" class="user-photo" src="" alt="Uploaded user photo" />
+                    <h3 class="user-name" id="generatedName"></h3>
+                    <div class="card-id" id="cardId"></div>
+                    <div class="card-footer">Celebrate Freedom | Celebrate Unity</div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="downloadBtn">Download Card</button>
+                <button id="shareBtn">Share Card</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast"></div>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
